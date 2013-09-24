@@ -1,0 +1,12 @@
+Source: ros-hydro-threemxl
+Section: misc
+Priority: extra
+Maintainer: Wouter Caarls <w.caarls@tudelft.nl>
+Build-Depends: debhelper (>= 7.0.50~), libftdipp-dev, libmuparser-dev, libreadline-dev, libtinyxml-dev, ros-hydro-catkin, ros-hydro-roscpp, ros-hydro-shared-serial
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-hydro-threemxl
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libftdipp-dev, libmuparser-dev, libreadline-dev, libtinyxml-dev, ros-hydro-roscpp, ros-hydro-shared-serial
+Description: Dynamixel and 3mxl driver
