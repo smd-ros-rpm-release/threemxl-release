@@ -7,7 +7,6 @@
 
 INCLUDE (${WORKSPACE_DIR}/dbl/platform/io/logging/logging.cmake)
 
-INCLUDE_DIRECTORIES(${WORKSPACE_DIR}/dbl/platform/io/configuration)
 TARGET_LINK_LIBRARIES(${TARGET} configuration)
 
 IF (NOT __CONFIGURATION_CMAKE_INCLUDED)

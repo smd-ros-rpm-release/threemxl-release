@@ -8,8 +8,8 @@
 #endif
 
 #include <pthread.h>
-#include <StdLog.h>
-#include <Log2.h>
+#include <threemxl/platform/io/logging/StdLog.h>
+#include <threemxl/platform/io/logging/Log2.h>
 
 class CStdLog2Factory : public CLog2Factory
 {

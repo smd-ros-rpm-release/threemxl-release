@@ -1,5 +1,5 @@
-#include "CDxlCom.h"
-#include "CDxlSerialPacketHandler.h"
+#include <threemxl/platform/hardware/dynamixel/CDxlCom.h>
+#include <threemxl/platform/hardware/dynamixel/CDxlSerialPacketHandler.h>
 
 CDxlSerialPacketHandler::CDxlSerialPacketHandler(LxSerial *&serialPort) :
   mLog("CDxlCom"),

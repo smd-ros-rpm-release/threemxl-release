@@ -9,7 +9,7 @@
 #include "CDxlGeneric.h"
 #include "CDxlPacket.hpp"
 #include "CDxlConfig.h"
-#include <Log2.h>
+#include <threemxl/platform/io/logging/Log2.h>
 
 
 // Forward declarations

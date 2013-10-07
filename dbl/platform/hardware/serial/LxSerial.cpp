@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 
-#include "LxSerial.h"
+#include <threemxl/platform/hardware/serial/LxSerial.h>
 
 
 /*	constructor */
