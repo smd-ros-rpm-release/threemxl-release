@@ -1,3 +1,22 @@
+## threemxl - 0.1.6-0
+
+User `wcaarls@TUD419056` released the packages in the `threemxl` repository by running `/usr/bin/bloom-release --rosdistro hydro --track hydro threemxl` on `Mon, 07 Oct 2013 16:21:41 -0000`
+
+The `threemxl` package was released.
+
+Version of package(s) in repository `threemxl`:
+- rosdistro version: `0.1.4-0`
+- old version: `0.1.4-0`
+- new version: `0.1.6-0`
+
+Versions of tools used:
+- bloom version: `0.4.4`
+- catkin_pkg version: `0.1.20`
+- rosdep version: `0.10.22`
+- rosdistro version: `0.2.14`
+- vcstools version: `0.1.31`
+
+
 ## threemxl - 0.1.4-0
 
 User `wcaarls@TUD419056` released the packages in the `threemxl` repository by running `/usr/bin/bloom-release --rosdistro hydro --track hydro threemxl` on `Fri, 27 Sep 2013 08:08:35 -0000`
