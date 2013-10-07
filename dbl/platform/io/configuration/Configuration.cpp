@@ -5,7 +5,8 @@
  *      Author: Erik Schuitema
  */
 
-#include "Configuration.h"
+#include <threemxl/platform/io/configuration/Configuration.h>
+#include <muParser/muParser.h>
 #include <stdlib.h>
 
 #ifdef WIN32

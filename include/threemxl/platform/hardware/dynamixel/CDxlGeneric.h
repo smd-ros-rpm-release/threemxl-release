@@ -8,7 +8,7 @@
 #include "CDxlCom.h"
 #include "CDxlConfig.h"
 #include "CDxlGroup.h"
-#include <Log2.h>
+#include <threemxl/platform/io/logging/Log2.h>
 
 #include <iostream>
 #include <iomanip>

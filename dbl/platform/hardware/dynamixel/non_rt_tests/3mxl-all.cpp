@@ -7,7 +7,7 @@
 
 #include <sys/mman.h>
 #include <signal.h>
-#include <3mxl.h>
+#include <threemxl/platform/hardware/dynamixel/3mxl/3mxl.h>
 
 
 #include <stdio.h>

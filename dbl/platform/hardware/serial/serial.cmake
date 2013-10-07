@@ -5,8 +5,6 @@
 # 30-03-2010 (wcaarls): Initial revision
 #
 
-INCLUDE_DIRECTORIES(${WORKSPACE_DIR}/dbl/platform/hardware/serial)
-
 TARGET_LINK_LIBRARIES(${TARGET} serial)
 
 IF (NOT __SERIAL_CMAKE_INCLUDED)

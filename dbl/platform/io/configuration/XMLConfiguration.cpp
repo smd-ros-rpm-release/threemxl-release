@@ -1,9 +1,9 @@
 
 //#include <stdlib.h>
 
-#include "XMLConfiguration.h"
+#include <threemxl/platform/io/configuration/XMLConfiguration.h>
 #include <string.h>
-#include <Log2.h>
+#include <threemxl/platform/io/logging/Log2.h>
 
 #ifdef _MSC_VER
 	#define CONST_PATH_SEPARATOR	'\\'

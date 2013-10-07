@@ -5,7 +5,7 @@
 //#include <map>
 
 //#include <utilities/TextFile.hpp>
-#include <Configuration.h>
+#include "Configuration.h"
 #include <tinyxml.h>
 #include <vector>
 

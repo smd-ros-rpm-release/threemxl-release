@@ -12,15 +12,15 @@
 #include <errno.h>
 #include <sys/time.h>
 
-#include <LxSerial.h>
+#include <threemxl/platform/hardware/serial/LxSerial.h>
 #ifdef XENOMAI
-#include <LxRtSerial.h>
+#include <threemxl/platform/hardware/serial/LxRtSerial.h>
 #include <native/timer.h>
 #endif //XENOMAI
 
 
 #include "CDxlPacket.hpp"
-#include <Log2.h>
+#include <threemxl/platform/io/logging/Log2.h>
 
 #define SEND_RETRY_FACTOR 1		///< the number of times we want to retry a send if it fails
 #define RECEIVE_RETRY_FACTOR 0	///< the number of times we want to retry a receive if it fails

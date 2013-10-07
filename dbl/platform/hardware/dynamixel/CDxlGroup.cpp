@@ -3,10 +3,10 @@
 // Delft University of Technology
 // www.dbl.tudelft.nl
 
-#include "CDxlGroup.h"
-#include "dynamixel/Dynamixel.h"
-#include "3mxl/3mxl.h"
-#include "DxlClassFactory.hpp"
+#include <threemxl/platform/hardware/dynamixel/CDxlGroup.h>
+#include <threemxl/platform/hardware/dynamixel/dynamixel/Dynamixel.h>
+#include <threemxl/platform/hardware/dynamixel/3mxl/3mxl.h>
+#include <threemxl/platform/hardware/dynamixel/DxlClassFactory.hpp>
 
 
 //***********************************************************//
