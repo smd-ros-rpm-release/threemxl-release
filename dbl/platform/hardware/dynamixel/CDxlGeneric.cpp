@@ -1,6 +1,4 @@
-
-
-#include "CDxlGeneric.h"
+#include <threemxl/platform/hardware/dynamixel/CDxlGeneric.h>
 
 int CDxlGeneric::readData(BYTE startingAddress, BYTE dataLength, BYTE *data)
 {

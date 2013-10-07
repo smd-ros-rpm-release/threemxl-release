@@ -3,8 +3,8 @@
 // Delft University of Technology
 // www.dbl.tudelft.nl
 
-#include "CDxlCom.h"
-#include "CDxlSerialPacketHandler.h"
+#include <threemxl/platform/hardware/dynamixel/CDxlCom.h>
+#include <threemxl/platform/hardware/dynamixel/CDxlSerialPacketHandler.h>
 
 //***********************************************************//
 //********************* CDxlCom *********************//

@@ -7,7 +7,7 @@
 
 #include <sys/mman.h>
 #include <signal.h>
-#include <Dynamixel.h>
+#include <threemxl/platform/hardware/dynamixel/dynamixel/Dynamixel.h>
 
 #include <stdio.h>
 #include <string.h>

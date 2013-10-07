@@ -5,7 +5,6 @@
 # 29-03-2010 (wcaarls): Initial revision
 #
 
-INCLUDE_DIRECTORIES(${WORKSPACE_DIR}/dbl/externals/half)
 TARGET_LINK_LIBRARIES(${TARGET} half)
 
 IF (NOT __HALF_CMAKE_INCLUDED)

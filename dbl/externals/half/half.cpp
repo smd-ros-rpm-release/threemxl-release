@@ -44,7 +44,7 @@
 //
 //---------------------------------------------------------------------------
 #include <assert.h>
-#include "half.h"
+#include <threemxl/externals/half/half.h>
 
 using namespace std;
 
@@ -53,9 +53,9 @@ using namespace std;
 //-------------------------------------------------------------
 
 const half::uif half::_toFloat[1 << 16] =
-    #include "toFloat.h"
+    #include <threemxl/externals/half/toFloat.h>
 const unsigned short half::_eLut[1 << 9] =
-    #include "eLut.h"
+    #include <threemxl/externals/half/eLut.h>
 
 //-----------------------------------------------
 // Overflow handler for float-to-half conversion;
