@@ -5,8 +5,6 @@
 # 29-03-2010 (wcaarls): Initial revision
 #
 
-INCLUDE_DIRECTORIES(${WORKSPACE_DIR}/dbl/platform/io/logging)
-
 IF (NOT __LOGGING_CMAKE_INCLUDED)
   SET(__LOGGING_CMAKE_INCLUDED 1)
 

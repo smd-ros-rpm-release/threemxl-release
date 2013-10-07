@@ -6,8 +6,8 @@
 
 #include <stdlib.h>
 
-#include "CDxlConfig.h"
-#include "CDxlGeneric.h"
+#include <threemxl/platform/hardware/dynamixel/CDxlConfig.h>
+#include <threemxl/platform/hardware/dynamixel/CDxlGeneric.h>
 
 
 CDxlConfig::CDxlConfig()

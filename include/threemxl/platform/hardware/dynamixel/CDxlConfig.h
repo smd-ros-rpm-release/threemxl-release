@@ -11,8 +11,8 @@
 #include "CDxlGroup.h"
 
 
-#include <Configuration.h>
-#include <OptionVars.h>
+#include <threemxl/platform/io/configuration/Configuration.h>
+#include <threemxl/platform/io/configuration/OptionVars.h>
 
 #define DXLCONFIG_NUM_CALIBPOINTS	301
 

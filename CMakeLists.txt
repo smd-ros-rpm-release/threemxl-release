@@ -20,18 +20,8 @@ pkg_check_modules(MUPARSER REQUIRED muparser)
 
 catkin_package(
   INCLUDE_DIRS   include
-                 dbl/platform/hardware/dynamixel
-                 dbl/platform/hardware/dynamixel/dynamixel
-                 dbl/platform/hardware/dynamixel/3mxl
-                 dbl/platform/hardware/serial
-                 dbl/platform/io/logging
-                 dbl/platform/io/configuration
-                 ${LIBFTDIPP_INCLUDE_DIRS}
-                 ${TINYXML_INCLUDE_DIRS}
-                 ${MUPARSER_INCLUDE_DIRS}
-  LIBRARIES      ${PROJECT_NAME}
+  LIBRARIES      ${PROJECT_NAME} ${TINYXML_LIBRARIES} ${MUPARSER_LIBRARIES} ${LIBFTDIPP_LIBRARIES}
   CATKIN_DEPENDS roscpp
-  DEPENDS        tinyxml libmuparser
 )
 
 ###########
@@ -77,12 +67,6 @@ install(TARGETS ${PROJECT_NAME} console example
 )
 
 install(DIRECTORY include/${PROJECT_NAME}/
-                  dbl/platform/hardware/dynamixel
-                  dbl/platform/hardware/dynamixel/dynamixel
-                  dbl/platform/hardware/dynamixel/3mxl
-                  dbl/platform/hardware/serial
-                  dbl/platform/io/logging
-                  dbl/platform/io/configuration
   DESTINATION     ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
   FILES_MATCHING
   PATTERN         "*.h"
