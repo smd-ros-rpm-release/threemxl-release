@@ -8,9 +8,6 @@
 INCLUDE (${WORKSPACE_DIR}/dbl/platform/hardware/serial/serial.cmake)
 INCLUDE (${WORKSPACE_DIR}/dbl/platform/io/configuration/configuration.cmake)
 
-INCLUDE_DIRECTORIES(${WORKSPACE_DIR}/dbl/platform/hardware/dynamixel)
-INCLUDE_DIRECTORIES(${WORKSPACE_DIR}/dbl/platform/hardware/dynamixel/dynamixel)
-INCLUDE_DIRECTORIES(${WORKSPACE_DIR}/dbl/platform/hardware/dynamixel/3mxl)
 TARGET_LINK_LIBRARIES(${TARGET} dynamixel)
 ADD_DEPENDENCIES(${TARGET} dynamixel)
 

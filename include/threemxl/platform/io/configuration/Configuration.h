@@ -4,10 +4,9 @@
 #include <string>
 #include <vector>
 #include <stdlib.h>
-#include <muParser.h>
-#include <OptionVars.h>
-#include <Log2.h>
+#include <threemxl/platform/io/logging/Log2.h>
 
+#include "OptionVars.h"
 
 #define CONFIGURATION_ARRAY_DELIMITER	';'
 
@@ -15,6 +14,11 @@
 class CConfigSection;
 class IConfig;
 class IConfigProperty;
+
+namespace mu
+{
+  class Parser;
+}
 
 // Base class for a config interface. Useful for giving out interfaces and deleting them later (hence the virtual destructor)
 // Whenever your interface returns a pointer to a new interface,

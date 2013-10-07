@@ -3,8 +3,8 @@
 // Delft University of Technology
 // www.dbl.tudelft.nl
 
-#include "Dynamixel.h"
-#include <CDxlPacketHandler.h>
+#include <threemxl/platform/hardware/dynamixel/dynamixel/Dynamixel.h>
+#include <threemxl/platform/hardware/dynamixel/CDxlPacketHandler.h>
 
 #include <math.h>
 #include <sstream>
