@@ -4,8 +4,8 @@
 // Delft University of Technology
 // www.dbl.tudelft.nl
 
-#include "3mxl.h"
-#include <CDxlPacketHandler.h>
+#include <threemxl/platform/hardware/dynamixel/3mxl/3mxl.h>
+#include <threemxl/platform/hardware/dynamixel/CDxlPacketHandler.h>
 
 #include <math.h>
 #include <sstream>
@@ -13,7 +13,7 @@
 #include <string.h>
 #include <unistd.h> // we have a usleep in report which is nonrt
 
-#include <half.h>
+#include <threemxl/externals/half/half.h>
 
 using namespace std;
 

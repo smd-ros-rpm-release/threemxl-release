@@ -1,7 +1,7 @@
 #ifndef CDXLPACKETHANDLER_H_
 #define CDXLPACKETHANDLER_H_
 
-#include <CDxlPacket.hpp>
+#include "CDxlPacket.hpp"
 
 class CDxlPacketHandler
 {

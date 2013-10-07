@@ -1,5 +1,5 @@
-#include <CDxlPacketHandler.h>
-#include <LxSerial.h>
+#include "CDxlPacketHandler.h"
+#include <threemxl/platform/hardware/serial/LxSerial.h>
 
 class CDxlSerialPacketHandler : public CDxlPacketHandler
 {
