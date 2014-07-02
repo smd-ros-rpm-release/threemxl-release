@@ -22,6 +22,11 @@
 #include <win32_compat.h>
 #endif
 
+#ifdef __APPLE__
+#include <mach/clock.h>
+#include <mach/mach.h>
+#endif
+
 class CStdStringbuf: public std::stringbuf
 {
 	protected:
@@ -56,7 +61,7 @@ class CStdStringbuf: public std::stringbuf
 					if (len > 0)
 					{
 						// Null-terminate the string before outputting it (this is necessary)
-#ifdef _MSC_VER
+#if defined(_MSC_VER) || defined(__APPLE__)
 						if (this->pptr() == this->epptr())
 							len--;
 #else
@@ -88,7 +93,18 @@ class CStdStringbuf: public std::stringbuf
 							if (mTimeStamping)
 							{
 								timespec absTime;
-							    clock_gettime(CLOCK_REALTIME, &absTime);
+								#ifdef __MACH__ // OS X does not have clock_gettime, use clock_get_time
+								clock_serv_t cclock;
+								mach_timespec_t mts;
+								host_get_clock_service(mach_host_self(), CALENDAR_CLOCK, &cclock);
+								clock_get_time(cclock, &mts);
+								mach_port_deallocate(mach_task_self(), cclock);
+								absTime.tv_sec = mts.tv_sec;
+								absTime.tv_nsec = mts.tv_nsec;
+								
+								#else
+								clock_gettime(CLOCK_REALTIME, &absTime);
+								#endif
 								printf("[TS:%llu] ", absTime.tv_sec*(long long int)(1E9) + absTime.tv_nsec);
 							}
 							// Set message color
@@ -114,7 +130,7 @@ class CStdStringbuf: public std::stringbuf
 						}
 
 						// Adjust the write buffer pointers. This effectively empties the buffer.
-#ifdef _MSC_VER
+#if defined(__APPLE__) || defined(_MSC_VER)
 						setg(pbase(), pbase(), epptr());
 						setp(pbase(), epptr());
 #else

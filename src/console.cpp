@@ -8,6 +8,11 @@
 #include <threemxl/CDynamixelROS.h>
 #include <threemxl/platform/io/configuration/XMLConfiguration.h>
 
+#ifdef __MACH__
+#include <mach/clock.h>
+#include <mach/mach.h>
+#endif
+
 using std::cout;
 using std::endl;
 using std::hex;
@@ -192,7 +197,18 @@ bool DxlROSCommand::execute(ArgList args)
   else if (name_ == "speed")
     DXLC_SAFE_CALL(motor->setSpeed(atof(args[0].c_str())));
   else if (name_ == "accel")
-    DXLC_SAFE_CALL(motor->setAcceleration(atof(args[0].c_str())));
+  {
+    switch (args.size())
+    {
+      case 0:
+        DXLC_SAFE_CALL(motor->getAcceleration());
+        cout << "Acceleration:" << endl << "  " << motor->presentAcceleration() << " rad/s^2" << endl;
+        break;
+      case 1:
+        DXLC_SAFE_CALL(motor->setAcceleration(atof(args[0].c_str())));
+        break;
+    }
+  }
   else if (name_ == "moffset")
     DXLC_SAFE_CALL(motor->setMotorOffset(atof(args[0].c_str())));
   else if (name_ == "joffset")
@@ -221,7 +237,18 @@ bool DxlROSCommand::execute(ArgList args)
   else if (name_ == "lspeed")
     DXLC_SAFE_CALL(motor->setLinearSpeed(atof(args[0].c_str())));
   else if (name_ == "laccel")
-    DXLC_SAFE_CALL(motor->setLinearAcceleration(atof(args[0].c_str())));
+  {
+    switch (args.size())
+    {
+      case 0:
+        DXLC_SAFE_CALL(motor->getLinearAcceleration());
+        cout << "Acceleration:" << endl << "  " << motor->presentLinearAcceleration() << " m/s^2" << endl;
+        break;
+      case 1:
+        DXLC_SAFE_CALL(motor->setLinearAcceleration(atof(args[0].c_str())));
+        break;
+    }
+  }
   else if (name_ == "current")
     DXLC_SAFE_CALL(motor->setCurrent(atof(args[0].c_str())));
   else if (name_ == "torque")
@@ -397,7 +424,17 @@ void Lockable::wait(double interval)
   if (interval > 0)
   {
     struct timespec spec;
+#ifdef __MACH__ // OS X does not have clock_gettime, use clock_get_time
+    clock_serv_t cclock;
+    mach_timespec_t mts;
+    host_get_clock_service(mach_host_self(), CALENDAR_CLOCK, &cclock);
+    clock_get_time(cclock, &mts);
+    mach_port_deallocate(mach_task_self(), cclock);
+    spec.tv_sec = mts.tv_sec;
+    spec.tv_nsec = mts.tv_nsec;
+#else
     clock_gettime(CLOCK_REALTIME, &spec);
+#endif
     
     spec.tv_sec += (time_t)interval;
     spec.tv_nsec += (long)((interval-(time_t)interval)*1000000000);
@@ -481,6 +518,7 @@ void DxlROSConsole::init(char *path)
   commands_.push_back(DxlROSCommand(this, "pos",     2, "pos     <pos> <speed>    Sets the target position in [rad] and maximum velocity in [rad/s]."));
   commands_.push_back(DxlROSCommand(this, "pos",     3, "pos     <pos> <sp> <ac>  Sets the target position in [rad], velocity in [rad/s] and acceleration in [rad/s^2]."));
   commands_.push_back(DxlROSCommand(this, "speed",   1, "speed   <speed>          Sets the target speed in [rad/s]."));
+  commands_.push_back(DxlROSCommand(this, "accel",   0, "accel                    Gets the current acceleration [rad/s^2]."));
   commands_.push_back(DxlROSCommand(this, "accel",   1, "accel   <accel>          Sets the acceleration for trajectory generation in [rad/s^2]."));
   
   commands_.push_back(DxlROSCommand(this, "lpos",    0, "lpos                     Gets the current position in [m]."));
@@ -488,6 +526,7 @@ void DxlROSConsole::init(char *path)
   commands_.push_back(DxlROSCommand(this, "lpos",    2, "lpos    <pos> <speed>    Sets the target position in [m] and maximum velocity in [m/s]."));
   commands_.push_back(DxlROSCommand(this, "lpos",    3, "lpos    <pos> <sp> <ac>  Sets the target position in [m], velocity in [m/s] and acceleration in [m/s^2]."));
   commands_.push_back(DxlROSCommand(this, "lspeed",  1, "lspeed  <speed>          Sets the target speed in [m/s]."));
+  commands_.push_back(DxlROSCommand(this, "laccel",  0, "laccel                   Gets the current acceleration in [m/s^2]."));
   commands_.push_back(DxlROSCommand(this, "laccel",  1, "laccel  <accel>          Sets the acceleration for trajectory generation in [m/s^2]."));
   
   commands_.push_back(DxlROSCommand(this, "current", 1, "current <current>        Sets the target current in [A]."));
