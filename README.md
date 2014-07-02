@@ -1,3 +1,22 @@
+## threemxl (indigo) - 0.2.0-0
+
+The packages in the `threemxl` repository were released into the `indigo` distro by running `/usr/bin/bloom-release --rosdistro indigo --track indigo threemxl --edit` on `Wed, 02 Jul 2014 13:34:48 -0000`
+
+The `threemxl` package was released.
+
+Version of package(s) in repository `threemxl`:
+- rosdistro version: `null`
+- old version: `null`
+- new version: `0.2.0-0`
+
+Versions of tools used:
+- bloom version: `0.5.10`
+- catkin_pkg version: `0.2.2`
+- rosdep version: `0.10.28`
+- rosdistro version: `0.3.5`
+- vcstools version: `0.1.35`
+
+
 ## threemxl - 0.1.8-0
 
 User `wcaarls@TUD419056` released the packages in the `threemxl` repository by running `/usr/bin/bloom-release --rosdistro hydro --track hydro threemxl` on `Mon, 13 Jan 2014 10:47:13 -0000`
