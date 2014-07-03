@@ -1,0 +1,58 @@
+ros-indigo-threemxl (0.2.0-2saucy) saucy; urgency=high
+
+  * Add getAcceleration and getLinearAcceleration and fix some wrong data handling
+  * OSX Compile fixes (Hans Gaiser)
+
+ -- Wouter Caarls <w.caarls@tudelft.nl>  Wed, 02 Jul 2014 03:00:00 -0000
+
+ros-indigo-threemxl (0.1.8-2saucy) saucy; urgency=high
+
+  * threemxl: moved sync read index to make room for extra analog inputs
+  * threemxl: added documentation
+  * threemxl: added C3mxl.h and CDynamixel.h convenience header files
+
+ -- Wouter Caarls <w.caarls@tudelft.nl>  Mon, 13 Jan 2014 02:00:00 -0000
+
+ros-indigo-threemxl (0.1.7-2saucy) saucy; urgency=high
+
+  * threemxl: don't use explicit muParser path
+
+ -- Wouter Caarls <w.caarls@tudelft.nl>  Wed, 09 Oct 2013 03:00:00 -0000
+
+ros-indigo-threemxl (0.1.6-2saucy) saucy; urgency=high
+
+  * threemxl: Add explicit transitive library dependencies
+
+ -- Wouter Caarls <w.caarls@tudelft.nl>  Mon, 07 Oct 2013 03:00:00 -0000
+
+ros-indigo-threemxl (0.1.5-2saucy) saucy; urgency=high
+
+  * threemxl: splitting source and header files
+
+ -- Wouter Caarls <w.caarls@tudelft.nl>  Mon, 07 Oct 2013 03:00:00 -0000
+
+ros-indigo-threemxl (0.1.4-2saucy) saucy; urgency=high
+
+  * threemxl: avoid making list out of CXX_FLAGS
+
+ -- Wouter Caarls <w.caarls@tudelft.nl>  Fri, 27 Sep 2013 03:00:00 -0000
+
+ros-indigo-threemxl (0.1.3-2saucy) saucy; urgency=high
+
+  * threemxl: added pkg-config build dependency
+
+ -- Wouter Caarls <w.caarls@tudelft.nl>  Thu, 26 Sep 2013 03:00:00 -0000
+
+ros-indigo-threemxl (0.1.2-2saucy) saucy; urgency=high
+
+  * threemxl: added system dependencies to package.xml
+
+ -- Wouter Caarls <w.caarls@tudelft.nl>  Tue, 24 Sep 2013 03:00:00 -0000
+
+ros-indigo-threemxl (0.1.1-2saucy) saucy; urgency=high
+
+  * Added catkinized threemxl package
+
+ -- Wouter Caarls <w.caarls@tudelft.nl>  Tue, 24 Sep 2013 03:00:00 -0000
+
+
